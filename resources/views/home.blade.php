@@ -38,6 +38,7 @@
                     <img src="/palangan.jpeg" class="hvr-grow">
                     <img src="/palangan.jpeg" class="hvr-grow">
                     <img src="/palangan.jpeg" class="hvr-grow">
+                    <img src="/palangan.jpeg" class="hvr-grow">
                 </div>
             </div>
         </div>

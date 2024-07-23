@@ -173,15 +173,20 @@ nav {
     height: 500px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 5px;
+    gap: 20px;
     overflow-y: scroll;
     box-shadow: -3px 3px 15px rgba(0,0,0,.2);
-    padding-top: 10px;
-    border-radius: 10px 0 0 0;
+    padding: 10px;
+    background: var(--c1);
+    border-radius: 10px 0 0 10px;
+    /* border-radius: 10px 0 0 0; */
+}
+.content-side *{
+    color: var(--c4);
 }
 .content-side img {
     width: 100%;
+    border: 2px solid var(--c4);
     /* border-radius: 10px; */
 }
 
@@ -277,9 +282,10 @@ iframe {
     justify-content: center;
     background: var(--c3);
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 .price-container p{
+    font-size: 14px;
     color: var(--c4);
 }
 
