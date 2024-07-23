@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="content-side">
-                <h1>Galeri</h1>
+                <h1 align="center">Galeri</h1>
                 <div class="galeri-container">
                     <img src="/palangan.jpeg" class="hvr-grow">
                     <img src="/palangan.jpeg" class="hvr-grow">

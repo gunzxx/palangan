@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="/hvr/css/hover.min.css" />
+    <link rel="stylesheet" href="/hvr/css/hover-min.css" />
     <link rel="stylesheet" href="/leaflet/leaflet.css" />
     <link rel="stylesheet" href="/aos/dist/aos.css" />
     <link href="/fa/css/fontawesome.css" rel="stylesheet" />
@@ -108,12 +108,12 @@
         </div>
     </section>
 
-    @yield('script')
-    <script src="/gsap/minified/gsap.min.js"></script>
     <script src="/aos/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+    <script src="/script.js"></script>
+    @yield('script')
 </body>
 
 </html>
