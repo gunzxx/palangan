@@ -14,6 +14,16 @@
                         <img
                             src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
                     </div>
+                    <div class="katalog-detail">
+                        <div class="katalog-text">
+                            <h3>{{$product->name}}</h3>
+                            <p>{{$product->seller}}</p>
+                            <p class="elipsis-text">{{$product->detail}}</p>
+                        </div>
+                        <a href="https://wa.me/{{$product->contact}}" target="_blank" class="katalog-price">
+                            <span>Rp. {{ number_format($product->price, 2, ",", ".") }}</span>
+                        </a>
+                    </div>
                 </div>
             @endforeach
         </div>
