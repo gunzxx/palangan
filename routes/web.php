@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Models\Product;
@@ -20,4 +23,16 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/katalog', [ProductController::class, 'index']);
 
-Route::get('/berita', [ProductController::class, 'index']);
+Route::get('/berita', [BeritaController::class, 'index']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin/{id}/edit', [AdminController::class, 'edit']);
+
+    Route::get('/logout', [AuthController::class, 'logout']);
+});
+
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [AuthController::class, 'login'])->name('login');
+    Route::post('/login', [AuthController::class, 'authLogin']);
+});

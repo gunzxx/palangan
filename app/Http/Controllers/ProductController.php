@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::limit(3)->get();
+        $products = Product::get();
         return view('katalog', [
             'products' => $products,
             'page' => 'katalog',

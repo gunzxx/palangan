@@ -66,7 +66,7 @@
                             <p>{{ $product->detail }}</p>
                         </div>
                         <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
-                            <p>Rp. {{ number_format($product->price, 2, ",", ".") }}</p>
+                            <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Rp. {{ number_format($product->price, 2, ",", ".") }}</p>
                         </a>
                     </div>
                 </div>

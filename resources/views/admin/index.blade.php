@@ -1,0 +1,91 @@
+@extends('layout.main')
+
+@section('head')
+    <link rel="stylesheet" href="/style/admin.css">
+@endsection
+
+@section('content')
+    @if(session('token'))
+        <input type="hidden" id="token" value="{{session('token')}}">
+        <script>
+            const token = document.getElementById('token').value;
+            document.cookie = `jwt-token=${token};`;
+        </script>
+    @endif
+    <section id="katalog">
+        <h1>Manajemen UMKM Desa Palangan</h1>
+        <div class="action-admin-container">
+            <a href="/logout" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+        <table class="katalogs">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Gambar</th>
+                    <th>Nama</th>
+                    <th>Pemilik</th>
+                    <th class="detail-col">Detail</th>
+                    <th>Harga</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($products as $key => $product)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>
+                            <div class="img-product">
+                                <img
+                                    src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
+                            </div>
+                        </td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->seller }}</td>
+                        <td>
+                            <div class="elipsis-text">
+                                {{ $product->detail }}
+                            </div>
+                        </td>
+                        <td>Rp. {{ number_format($product->price, 2, ",", ".") }}</td>
+                        <td>
+                            <div class="action-container">
+                                <a href="/admin/{{$product->id}}/edit" class="edit-btn">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <i class="fa-solid fa-trash delete-btn" data-id="{{ $product->id }}"></i>
+                            </div>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </section>
+@endsection
+
+
+@section('script')
+    <script>
+        const deletes = document.querySelectorAll('.delete-btn');
+        deletes.forEach(deleteBtn => {
+            deleteBtn.addEventListener('click', function(event){
+                const id = this.getAttribute('data-id');
+                Swal.fire({
+                    text: "Hapus data UMKM?",
+                    icon: "question",
+                    showCancelButton: true,
+                    confirmButtonColor: 'red',
+                    confirmButtonText: 'Oke',
+                }).then(answ => {
+                    if(answ.isConfirmed){
+                        axios.delete(`/api/admin/${id}/delete`).then(res=>{
+                            console.log(res);
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+@endsection

@@ -1,3 +1,8 @@
+@if (!isset($page))
+    {{ $page = '' }}
+@endif
+
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -15,6 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="/hvr/css/hover-min.css" />
     <link rel="stylesheet" href="/leaflet/leaflet.css" />
@@ -49,8 +55,10 @@
                 <a class="nav-item {{ $page == 'berita' ? 'active' : '' }}" href="/berita">Berita</a>
             </div>
             <div class="nav-list">
-                <a class="nav-item {{ $page == 'berita' ? 'active' : '' }}" href="https://wa.me/+6281234567890"
-                    target="_blank">Bantuan</a>
+                <a class="nav-item {{ $page == 'admin' ? 'active' : '' }}" href="/admin">
+                    {{-- <i class="fa-solid fa-user"></i> --}}
+                    Admin
+                </a>
             </div>
         </div>
     </nav>
@@ -113,6 +121,7 @@
         AOS.init();
     </script>
     <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     @yield('script')
 </body>
 

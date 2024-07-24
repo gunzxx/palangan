@@ -6,7 +6,7 @@
 
 @section('content')
     <section id="katalog">
-        <h1>DAFTAR UMKM</h1>
+        <h1>Daftar UMKM Desa Palangan</h1>
         <div class="katalogs">
             @foreach ($products as $product)
                 <div class="katalog">
@@ -21,7 +21,7 @@
                             <p class="elipsis-text">{{$product->detail}}</p>
                         </div>
                         <a href="https://wa.me/{{$product->contact}}" target="_blank" class="katalog-price">
-                            <span>Rp. {{ number_format($product->price, 2, ",", ".") }}</span>
+                            <span><i class="fa-solid fa-cart-shopping"></i> &nbsp;Rp. {{ number_format($product->price, 2, ",", ".") }}</span>
                         </a>
                     </div>
                 </div>
