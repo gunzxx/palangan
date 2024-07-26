@@ -5,8 +5,19 @@
 @endsection
 
 @section('content')
-    @if(session('token'))
-        <input type="hidden" id="token" value="{{session('token')}}">
+    @session('success')
+        <input type="hidden" id="success" value="{{ session('success') }}">
+        <script>
+            const alertText = document.getElementById('success').value;
+            Swal.fire({
+                icon: 'success',
+                text: alertText,
+            });
+        </script>
+    @endsession
+
+    @if (session('token'))
+        <input type="hidden" id="token" value="{{ session('token') }}">
         <script>
             const token = document.getElementById('token').value;
             document.cookie = `jwt-token=${token};`;
@@ -15,6 +26,10 @@
     <section id="katalog">
         <h1>Manajemen UMKM Desa Palangan</h1>
         <div class="action-admin-container">
+            <a href="/admin/create" class="create-btn">
+                <i class="fa-solid fa-plus"></i>
+                Tambah
+            </a>
             <a href="/logout" class="logout-btn">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Logout
@@ -39,7 +54,7 @@
                         <td>
                             <div class="img-product">
                                 <img
-                                    src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
+                                    src="{{ $product->getFirstMediaUrl('preview') == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl('preview') }}">
                             </div>
                         </td>
                         <td>{{ $product->name }}</td>
@@ -49,10 +64,10 @@
                                 {{ $product->detail }}
                             </div>
                         </td>
-                        <td>Rp. {{ number_format($product->price, 2, ",", ".") }}</td>
+                        <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
                         <td>
                             <div class="action-container">
-                                <a href="/admin/{{$product->id}}/edit" class="edit-btn">
+                                <a href="/admin/{{ $product->id }}/edit" class="edit-btn">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                                 <i class="fa-solid fa-trash delete-btn" data-id="{{ $product->id }}"></i>
@@ -70,8 +85,9 @@
     <script>
         const deletes = document.querySelectorAll('.delete-btn');
         deletes.forEach(deleteBtn => {
-            deleteBtn.addEventListener('click', function(event){
+            deleteBtn.addEventListener('click', function(event) {
                 const id = this.getAttribute('data-id');
+                const token = getCookie('jwt-token');
                 Swal.fire({
                     text: "Hapus data UMKM?",
                     icon: "question",
@@ -79,9 +95,25 @@
                     confirmButtonColor: 'red',
                     confirmButtonText: 'Oke',
                 }).then(answ => {
-                    if(answ.isConfirmed){
-                        axios.delete(`/api/admin/${id}/delete`).then(res=>{
-                            console.log(res);
+                    if (answ.isConfirmed) {
+                        axios.delete(`/api/admin/${id}/delete`, {
+                            headers: {
+                                Authorization: `Bearer ${token}`,
+                            },
+                        }).then(res => {
+                            if (res.status == 200) {
+                                console.log(res.data.message);
+                                Swal.fire({
+                                    icon: "success",
+                                    text: res.data.message,
+                                });
+                            }
+                        }).catch(err => {
+                            console.log(err);
+                            Swal.fire({
+                                icon: "error",
+                                text: err.message,
+                            });
                         });
                     }
                 });

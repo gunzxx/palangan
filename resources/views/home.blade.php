@@ -2,7 +2,7 @@
 
 @section('content')
     <section id="hero">
-        <img src="/hero.jpg" alt="">
+        <img src="/img/umkm/1.jpeg" alt="">
     </section>
 
     <section id="main">
@@ -11,14 +11,7 @@
             <div class="content-body">
                 <div class="content" data-aos="fade-up">
                     <h1>Apa itu Desa Palangan?</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto temporibus minus praesentium
-                        totam illum accusamus ipsum, corporis error et nulla hic optio, assumenda consectetur iure alias
-                        ratione molestias commodi! Placeat et harum perspiciatis quo amet, vitae culpa eaque sunt,
-                        voluptates ducimus illo? Voluptatum, ab numquam? Aliquam accusamus recusandae iure! Minus deleniti,
-                        temporibus cum nemo harum aut quia placeat alias totam, libero quae, reiciendis error? Quisquam
-                        temporibus veniam ea eligendi sequi esse qui reprehenderit. Sit ipsam unde commodi deserunt quas
-                        laboriosam harum eligendi obcaecati vero eius enim perferendis, architecto nemo vel, soluta rem ut
-                        hic saepe ullam maxime sunt nisi adipisci.</p>
+                    <p>Desa palangan terletak di kecamatan jangkar kab.situbondo, rata - rata penduduk desa bekerja sebagai petani. desa palangan memiliki kebudayaan bernama rokat saba, ritual rokat saba menjadi suatu mekanisme yang menciptakan keteraturan dan keharmonisan sosial.</p>
                 </div>
                 <div class="content" data-aos="fade-up">
                     <h1>Potensi Desa Palangan</h1>
@@ -31,14 +24,19 @@
                         neque quos. Illum sequi odio consequuntur. Quam sit itaque deleniti voluptatem quaerat
                         exercitationem debitis, voluptas a! Quidem.</p>
                 </div>
+                <div class="content" data-aos="fade-up">
+                    <div class="content-img">
+                        <img src="/img/umkm/4.jpeg">
+                    </div>
+                </div>
             </div>
             <div class="content-side">
                 <h1 align="center">Galeri</h1>
                 <div class="galeri-container">
+                    <img src="/img/umkm/2.jpg" class="hvr-grow">
+                    <img src="/img/umkm/3.jpeg" class="hvr-grow">
                     <img src="/palangan.jpeg" class="hvr-grow">
-                    <img src="/palangan.jpeg" class="hvr-grow">
-                    <img src="/palangan.jpeg" class="hvr-grow">
-                    <img src="/palangan.jpeg" class="hvr-grow">
+                    <img src="/img/umkm/2.jpg" class="hvr-grow">
                 </div>
             </div>
         </div>
@@ -66,7 +64,7 @@
                             <p>{{ $product->detail }}</p>
                         </div>
                         <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
-                            <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Rp. {{ number_format($product->price, 2, ",", ".") }}</p>
+                            <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Pesan sekarang</p>
                         </a>
                     </div>
                 </div>

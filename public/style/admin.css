@@ -16,7 +16,7 @@ table{
 }
 
 thead{
-    background: var(--c2);
+    background: var(--c1);
 }
 thead *{
     color: var(--c4);
@@ -86,6 +86,13 @@ th.detail-col{
 .logout-btn{
     padding: 10px;
     background: red;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--c4);
+}
+.create-btn{
+    padding: 10px;
+    background: var(--c3);
     padding: 10px 20px;
     border-radius: 10px;
     color: var(--c4);

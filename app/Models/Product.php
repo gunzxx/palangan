@@ -10,4 +10,11 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Product extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
+
+    protected $guarded = ['id'];
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('preview')->singleFile();
+    }
 }

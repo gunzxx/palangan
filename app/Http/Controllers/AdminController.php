@@ -19,7 +19,43 @@ class AdminController extends Controller
         if(!$product= Product::find($id)){
             return redirect('admin');
         }
-        dd($product);
+        // dd($product);
+        return view('admin.edit',[
+            'page' => 'admin',
+            'product' => $product,
+        ]);
+    }
+
+    public function update($id, Request $request){
+        $request->validate([
+            'name' => 'required',
+            'seller' => 'required',
+            'price' => 'required',
+            'detail' => 'required',
+        ]);
+        if(!$product= Product::find($id)){
+            return redirect('admin')->withErrors([
+                'error' => 'Data tidak ditemukan'
+            ]);
+        }
+
+        if($request->gambar){
+            $request->validate([
+                'gambar' => 'image',
+            ]);
+            $product->addMediaFromRequest('gambar')->toMediaCollection('preview');
+        }
+
+        $product->update([
+            'name' => $request->name,
+            'seller' => $request->seller,
+            'price' => $request->price,
+            'detail' => $request->detail,
+        ]);
+        
+        return redirect('admin')->with([
+            'success' => 'Data berhasil diperbarui',
+        ]);
     }
 
     public function delete($id){
@@ -29,7 +65,7 @@ class AdminController extends Controller
             ], 404);
         }
         
-        $product->delete();
+        // $product->delete();
         return response()->json([
             'message' => 'data berhasil dihapus',
         ]);

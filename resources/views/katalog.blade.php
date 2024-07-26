@@ -21,7 +21,7 @@
                             <p class="elipsis-text">{{$product->detail}}</p>
                         </div>
                         <a href="https://wa.me/{{$product->contact}}" target="_blank" class="katalog-price">
-                            <span><i class="fa-solid fa-cart-shopping"></i> &nbsp;Rp. {{ number_format($product->price, 2, ",", ".") }}</span>
+                            <span><i class="fa-solid fa-cart-shopping"></i> &nbsp; Pesan sekarang</span>
                         </a>
                     </div>
                 </div>

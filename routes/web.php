@@ -28,6 +28,7 @@ Route::get('/berita', [BeritaController::class, 'index']);
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/admin/{id}/edit', [AdminController::class, 'edit']);
+    Route::post('/admin/{id}/edit', [AdminController::class, 'update']);
 
     Route::get('/logout', [AuthController::class, 'logout']);
 });

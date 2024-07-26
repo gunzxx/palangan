@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware(['auth:api'])->group(function(){
-    Route::delete('/admin/{id}/delete', [AdminController::class, 'delete']);
+    // Route::delete('/admin/{id}/delete', [AdminController::class, 'delete']);
 });
