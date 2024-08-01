@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('script')
+{{-- @section('script')
     <script>
         if (window.innerWidth <= 768) {
             const mobileNotification = document.getElementById('mobile-notification');
@@ -10,12 +10,12 @@
             console.log(mobileNotification);
         }
     </script>
-@endsection
+@endsection --}}
 
 @section('content')
-    <div id="mobile-notification">
+    {{-- <div id="mobile-notification">
         <h1>Untuk smartphone harap gunakan mode desktop</h1>
-    </div>
+    </div> --}}
 
     <section id="hero">
         <img src="/img/umkm/1.jpeg" alt="">
