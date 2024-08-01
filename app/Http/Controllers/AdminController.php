@@ -2,72 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index(){
-        $products = Product::all();
         return view('admin.index',[
             'page' => 'admin',
-            'products' => $products,
         ]);
     }
 
-    public function edit($id){
-        if(!$product= Product::find($id)){
-            return redirect('admin');
-        }
-        // dd($product);
-        return view('admin.edit',[
+    public function profile(){
+        return view('admin.profile',[
             'page' => 'admin',
-            'product' => $product,
         ]);
     }
 
-    public function update($id, Request $request){
+    public function update(Request $request){
         $request->validate([
             'name' => 'required',
-            'seller' => 'required',
-            'price' => 'required',
-            'detail' => 'required',
+            'email' => 'email',
         ]);
-        if(!$product= Product::find($id)){
-            return redirect('admin')->withErrors([
-                'error' => 'Data tidak ditemukan'
-            ]);
-        }
 
-        if($request->gambar){
+        if($request->profileImg){
             $request->validate([
-                'gambar' => 'image',
+                'profileImg' => 'image',
             ]);
-            $product->addMediaFromRequest('gambar')->toMediaCollection('preview');
+            auth()->user()->addMediaFromRequest('profileImg')->toMediaCollection('profile');
         }
 
-        $product->update([
-            'name' => $request->name,
-            'seller' => $request->seller,
-            'price' => $request->price,
-            'detail' => $request->detail,
-        ]);
-        
-        return redirect('admin')->with([
+        return redirect('/admin/profile')->with([
             'success' => 'Data berhasil diperbarui',
-        ]);
-    }
-
-    public function delete($id){
-        if(!$product= Product::find($id)){
-            return response()->json([
-                'message' => 'data tidak ditemukan',
-            ], 404);
-        }
-        
-        // $product->delete();
-        return response()->json([
-            'message' => 'data berhasil dihapus',
         ]);
     }
 }
