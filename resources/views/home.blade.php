@@ -1,6 +1,22 @@
 @extends('layout.main')
 
+@section('script')
+    <script>
+        if (window.innerWidth <= 768) {
+            const mobileNotification = document.getElementById('mobile-notification');
+            const navbar = document.querySelector('nav');
+            mobileNotification.style.display = 'flex';
+            navbar.style.display = 'none';
+            console.log(mobileNotification);
+        }
+    </script>
+@endsection
+
 @section('content')
+    <div id="mobile-notification">
+        <h1>Untuk smartphone harap gunakan mode desktop</h1>
+    </div>
+
     <section id="hero">
         <img src="/img/umkm/1.jpeg" alt="">
     </section>
