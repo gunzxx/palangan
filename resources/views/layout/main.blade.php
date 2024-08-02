@@ -46,8 +46,8 @@
                 <img src="/logo.png">
             </div>
             <div class="nav-header-text">
-                <h1>Desa Palangan</h1>
-                <p>Kabupaten Situbondo</p>
+                <h1>KUMPALA</h1>
+                <p>Komunitas UMKM Desa Palangan</p>
             </div>
         </div>
         <div class="nav-body">

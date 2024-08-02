@@ -15,14 +15,47 @@ class AdminProductController extends Controller
         ]);
     }
 
+    public function create(){
+        return view('product.create');
+    }
+
     public function edit($id){
         if(!$product= Product::find($id)){
-            return redirect('admin');
+            return redirect('admin/product');
         }
         // dd($product);
-        return view('admin.edit',[
+        return view('product.edit',[
             'page' => 'admin',
             'product' => $product,
+        ]);
+    }
+    
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'seller' => 'required',
+            'price' => 'required',
+            'detail' => 'required',
+            'contact' => 'required',
+        ]);
+        
+        $product = Product::create([
+            'name' => $request->name,
+            'seller' => $request->seller,
+            'price' => $request->price,
+            'detail' => $request->detail,
+            'contact' => '+62'.substr($request->detail, 1),
+        ]);
+
+        if($request->gambar){
+            $request->validate([
+                'gambar' => 'image',
+            ]);
+            $product->addMediaFromRequest('gambar')->toMediaCollection('preview');
+        }
+        
+        return redirect('admin')->with([
+            'success' => 'Data berhasil ditambahkan',
         ]);
     }
 
@@ -32,6 +65,7 @@ class AdminProductController extends Controller
             'seller' => 'required',
             'price' => 'required',
             'detail' => 'required',
+            'contact' => 'required',
         ]);
         if(!$product= Product::find($id)){
             return redirect('admin')->withErrors([
@@ -51,9 +85,10 @@ class AdminProductController extends Controller
             'seller' => $request->seller,
             'price' => $request->price,
             'detail' => $request->detail,
+            'contact' => '+62'.substr($request->contact, 1),
         ]);
         
-        return redirect('admin')->with([
+        return redirect('admin/product')->with([
             'success' => 'Data berhasil diperbarui',
         ]);
     }

@@ -32,9 +32,13 @@ td:has(.img-product) {
     width: fit-content !important;
 }
 
+td, td *{
+    font-size: 14px !important;
+}
+
 .img-product {
-    width: 100px;
-    background: red;
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,4 +162,43 @@ th.detail-col {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
+}
+
+
+.profile-menu-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 10px;
+    background: var(--c1);
+}
+
+.profile-img{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.profile-detail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.profile-detail *{
+    color: var(--c4) !important;
 }

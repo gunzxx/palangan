@@ -32,7 +32,7 @@
                         <img src="/img/umkm/4.jpeg">
                     </div>
                 </div>
-                <div class="content" id="potensi-palangan">
+                <div class="content content-flex" id="potensi-palangan">
                     <h1 data-aos="fade-up">Potensi Desa Palangan</h1>
                     <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quis earum neque ea minima ad
                         consectetur perferendis. Voluptates qui eos repellendus atque rem nulla nam natus exercitationem
@@ -41,10 +41,25 @@
                         voluptatum autem cum. Minima commodi doloremque quasi nihil ipsum, ex voluptate, amet, consectetur
                         ut sed reprehenderit maxime! Doloribus non veniam hic assumenda. Alias deleniti rerum quia ipsa,
                         neque quos. Illum sequi odio consequuntur. Quam sit itaque deleniti voluptatem quaerat
-                        exercitationem debitis, voluptas a! Quidem.</p>
+                        exercitationem debitis, voluptas a! Quidem.
+                    </p>
+                    <div class="content-img-container">
+                        <div data-aos="fade-up" class="content-img">
+                            <img src="/img/umkm/2.jpg">
+                        </div>
                         <div data-aos="fade-up" class="content-img">
                             <img src="/img/umkm/3.jpeg">
                         </div>
+                        <div data-aos="fade-up" class="content-img">
+                            <img src="/img/umkm/4.jpeg">
+                        </div>
+                        <div data-aos="fade-up" class="content-img">
+                            <img src="/img/umkm/1.jpeg">
+                        </div>
+                        <div data-aos="fade-up" class="content-img">
+                            <img src="/img/umkm/3.jpeg">
+                        </div>
+                    </div>
                 </div>
                 <div class="content" id="maps" data-aos="fade-up">
                     <h1>Peta Desa Palangan</h1>

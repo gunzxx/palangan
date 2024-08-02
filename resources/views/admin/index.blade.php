@@ -14,12 +14,24 @@
     @endif
 
     <section id="admin-menu">
+        <div class="profile-menu-container">
+            <div class="profile-img">
+                <img src="{{auth()->user()->getFirstMediaUrl('profile') == '' ? '/img/product/default.jpg' : auth()->user()->getFirstMediaUrl('profile')}}" alt="">
+            </div>
+            <div class="profile-detail">
+                <p class="profile-welcome">Selamat datang,</p>
+                <br>
+                <h1>{{auth()->user()->name}}</h1>
+                <p>{{auth()->user()->email}}</p>
+            </div>
+        </div>
+
         <h1>Menu Admin</h1>
         <ul>
             <li>
                 <a href="/admin/profile">
                     Profil&nbsp;
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </li>
             <li>

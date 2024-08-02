@@ -19,7 +19,7 @@
     <section id="katalog">
         <h1>Manajemen Produk UMKM Desa Palangan</h1>
         <div class="action-admin-container">
-            <a href="/admin/create" class="create-btn">
+            <a href="/admin/product/create" class="create-btn">
                 <i class="fa-solid fa-plus"></i>
                 Tambah
             </a>
@@ -32,6 +32,7 @@
                     <th>Nama</th>
                     <th>Pemilik</th>
                     <th class="detail-col">Detail</th>
+                    <th>Nomor Telepon</th>
                     <th>Harga</th>
                     <th>Aksi</th>
                 </tr>
@@ -53,6 +54,7 @@
                                 {{ $product->detail }}
                             </div>
                         </td>
+                        <td>{{ $product->contact }}</td>
                         <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
                         <td>
                             <div class="action-container">

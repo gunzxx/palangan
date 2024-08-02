@@ -10,14 +10,14 @@
         <h1>Edit Data UMKM</h1>
         <div class="form-group">
             <label for="name">Nama</label>
-            <input type="text" id="name" name="name" value="{{ $product->name }}">
+            <input autofocus value="{{old('name')}}" placeholder="Masukkan nama produk" type="text" id="name" name="name">
             @error('name')
                 <span class="error">{{ $message }}</span>
             @enderror
         </div>
         <div class="form-group">
             <label for="seller">Pemilik</label>
-            <input type="text" id="seller" name="seller" value="{{ $product->seller }}">
+            <input value="{{old('seller')}}" placeholder="Masukkan nama penjual" type="text" id="seller" name="seller">
             @error('seller')
                 <span class="error">{{ $message }}</span>
             @enderror
@@ -26,7 +26,7 @@
             <label for="gambar">Gambar</label>
             <div class="preview-img">
                 <img
-                    src="{{ $product->getFirstMediaUrl('preview') == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl('preview') }}">
+                    src="/img/product/default.jpg">
             </div>
             <input type="file" id="gambar" name="gambar">
             @error('gambar')
@@ -35,11 +35,15 @@
         </div>
         <div class="form-group">
             <label for="price">Harga</label>
-            <input type="number" id="price" name="price" value="{{ $product->price }}">
+            <input value="{{old('price')}}" placeholder="Masukkan harga produk" type="number" id="price" name="price">
         </div>
         <div class="form-group">
             <label for="detail">Detail</label>
-            <textarea name="detail" id="detail">{{ $product->detail }}</textarea>
+            <textarea placeholder="Masukkan detail produk" name="detail" id="detail">{{old('detail')}}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="contact">Nomor telepon</label>
+            <input value="{{old('contact')}}" placeholder="Masukkan nomor telepon (diawali dengan 0)" type="number" id="contact" name="contact">
         </div>
         <div class="form-group">
             <button>Simpan</button>

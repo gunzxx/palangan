@@ -44,6 +44,11 @@
     border: 0;
     color: var(--c4);
 }
+.form-group .error{
+    color: red;
+    font-size: 14px;
+    margin-top: -7px;
+}
 
 
 .preview-img{

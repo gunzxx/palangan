@@ -30,6 +30,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
     Route::get('/admin/profile', [AdminController::class, 'profile']);
     Route::post('/admin/profile', [AdminController::class, 'update']);
+    Route::post('/admin/password', [AdminController::class, 'updatePassword']);
+    Route::get('/admin/product/create', [AdminProductController::class, 'create']);
+    Route::post('/admin/product/create', [AdminProductController::class, 'store']);
     Route::get('/admin/product', [AdminProductController::class, 'index']);
     Route::get('/admin/product/{id}/edit', [AdminProductController::class, 'edit']);
     Route::post('/admin/product/{id}/edit', [AdminProductController::class, 'update']);

@@ -34,10 +34,16 @@
             <div class="form-group">
                 <label for="password">Password baru</label>
                 <input id="password" type="password" name="password" required>
+                @error('password')
+                    <span class="error">{{ $message }}</span>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Konfirmasi password</label>
-                <input id="password_confirmation" type="email" name="password_confirmation" required>
+                <input id="password_confirmation" type="password" name="password_confirmation" required>
+                @error('password_confirmation')
+                    <span class="error">{{ $message }}</span>
+                @enderror
             </div>
             <div class="form-group">
                 <button>simpan</button>

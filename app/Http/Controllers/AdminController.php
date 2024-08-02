@@ -35,4 +35,18 @@ class AdminController extends Controller
             'success' => 'Data berhasil diperbarui',
         ]);
     }
+
+    public function updatePassword(Request $request){
+        $request->validate([
+            'password' => 'required|confirmed',
+        ]);
+
+        auth()->user()->update([
+            'password' => bcrypt($request->password),
+        ]);
+
+        return redirect('/admin/profile')->with([
+            'success' => 'Data berhasil diperbarui',
+        ]);
+    }
 }

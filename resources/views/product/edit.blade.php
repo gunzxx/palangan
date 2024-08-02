@@ -42,6 +42,10 @@
             <textarea name="detail" id="detail">{{ $product->detail }}</textarea>
         </div>
         <div class="form-group">
+            <label for="contact">Nomor telepon</label>
+            <input value="{{str_replace('+62', 0, $product->contact)}}" placeholder="Masukkan nomor telepon (diawali dengan 0)" type="text" id="contact" name="contact">
+        </div>
+        <div class="form-group">
             <button>Simpan</button>
         </div>
     </form>
