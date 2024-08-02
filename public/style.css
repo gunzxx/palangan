@@ -186,8 +186,8 @@ nav {
     display: flex;
     gap: 20px;
     flex-direction: column;
-    box-shadow: -3px 3px 15px rgba(0,0,0,.2);
-    overflow-y: scroll;
+    /* box-shadow: -3px 3px 15px rgba(0,0,0,.2); */
+    /* overflow-y: scroll; */
     padding: 10px;
     background: var(--c4);
 }
@@ -216,6 +216,16 @@ nav {
 .content-img img{
     width: 100%;
 }
+
+.content-side ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
 
 /**
 * Maps
@@ -435,9 +445,6 @@ iframe {
     height: 50px;
     background: var(--c1);
 }
-
-
-
 
 
 #mobile-notification{

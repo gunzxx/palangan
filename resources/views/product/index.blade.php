@@ -56,7 +56,7 @@
                         <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
                         <td>
                             <div class="action-container">
-                                <a href="/admin/{{ $product->id }}/edit" class="edit-btn">
+                                <a href="/admin/product/{{ $product->id }}/edit" class="edit-btn">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                                 <i class="fa-solid fa-trash delete-btn" data-id="{{ $product->id }}"></i>

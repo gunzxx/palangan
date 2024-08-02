@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="content-side-container">
-                {{-- <div class="content-side">
+                <div class="content-side">
                     <h1 align="center">Menu</h1>
                     <ul>
                         <li>
@@ -69,7 +69,7 @@
                             <a href="#maps">Peta desa palangan</a>
                         </li>
                     </ul>
-                </div> --}}
+                </div>
                 {{-- <div class="galeri-container">
                     <img src="/img/umkm/2.jpg" class="hvr-grow">
                     <img src="/img/umkm/3.jpeg" class="hvr-grow">
