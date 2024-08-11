@@ -25,6 +25,9 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/katalog', [ProductController::class, 'index']);
 
+Route::get('/berita', [BeritaController::class, 'index']);
+Route::get('/berita/{id}', [BeritaController::class, 'detail']);
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
@@ -41,9 +44,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/admin/berita/create', [AdminBeritaController::class, 'store']);
     Route::get('/admin/berita/{id}/edit', [AdminBeritaController::class, 'edit']);
     Route::post('/admin/berita/{id}/edit', [AdminBeritaController::class, 'update']);
-
-    Route::get('/berita', [BeritaController::class, 'index']);
-    Route::get('/berita/{id}', [BeritaController::class, 'detail']);
 
     Route::get('/logout', [AuthController::class, 'logout']);
 });
