@@ -10,27 +10,31 @@
     </section>
 
     <section id="katalog">
-        <h1>Daftar UMKM Desa Palangan</h1>
-        <div class="katalogs">
-            @foreach ($products as $product)
-                <div class="katalog">
-                    <div class="katalog-img">
-                        <img
-                            src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
-                    </div>
-                    <div class="katalog-detail">
-                        <div class="katalog-text">
-                            <h3>{{$product->name}}</h3>
-                            <p>{{$product->seller}}</p>
-                            <p class="elipsis-text">{{$product->detail}}</p>
+        @if ($products->count() > 0)
+            <h1>Daftar UMKM Desa Palangan</h1>
+            <div class="katalogs">
+                @foreach ($products as $product)
+                    <div class="katalog">
+                        <div class="katalog-img">
+                            <img
+                                src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
                         </div>
-                        <a href="https://wa.me/{{$product->contact}}" target="_blank" class="katalog-price">
-                            <span><i class="fa-solid fa-cart-shopping"></i> &nbsp; Pesan sekarang</span>
-                        </a>
+                        <div class="katalog-detail">
+                            <div class="katalog-text">
+                                <h3>{{$product->name}}</h3>
+                                <p>{{$product->seller}}</p>
+                                <p class="elipsis-text">{{$product->detail}}</p>
+                            </div>
+                            <a href="https://wa.me/{{$product->contact}}" target="_blank" class="katalog-price">
+                                <span><i class="fa-solid fa-cart-shopping"></i> &nbsp; Pesan sekarang</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            @endforeach
-        </div>
+                @endforeach
+            </div>
+        @else
+            <h1>Tidak ada produk.</h1>
+        @endif
     </section>
 
     <div class="spacer-1"></div>

@@ -34,6 +34,7 @@
     <section id="berita">
         @if ($beritas->count() <= 0)
             <h1>Tidak ada berita.</h1>
+            {{-- <a href="/admin/berita/create">Tambah berita</a> --}}
         @else
             @foreach ($beritas as $berita)
                 <div class="berita">

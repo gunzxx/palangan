@@ -76,26 +76,28 @@
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div id="product" data-aos="fade-up">
-                    <h1>Produk Desa Palangan</h1>
-                    <div class="products">
-                        @foreach ($products as $product)
-                            <div class="product">
-                                <div class="product-image">
-                                    <img src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
-                                </div>
-                                <div class="product-detail">
-                                    <div class="detail-container">
-                                        <h1>{{ $product->name }}</h1>
-                                        <p>{{ $product->detail }}</p>
+                    @if ($products->count()>0)
+                        <h1>Produk Desa Palangan</h1>
+                        <div class="products">
+                            @foreach ($products as $product)
+                                <div class="product">
+                                    <div class="product-image">
+                                        <img src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
                                     </div>
-                                    <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
-                                        <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Pesan sekarang</p>
-                                    </a>
+                                    <div class="product-detail">
+                                        <div class="detail-container">
+                                            <h1>{{ $product->name }}</h1>
+                                            <p>{{ $product->detail }}</p>
+                                        </div>
+    x                                    <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
+                                            <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Pesan sekarang</p>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <a href="/katalog">Lihat lainnya>></a>
+                            @endforeach
+                        </div>
+                        <a href="/katalog">Lihat lainnya>></a>
+                    @endif
                 </div>
             </div>
             <div class="content-side-container">

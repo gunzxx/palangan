@@ -21,40 +21,40 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
-        Product::create([
-            'name' => 'Keripik singkong bapak Hasan',
-            'seller' => 'Bapak Hasan',
-            'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
-            'price' => 5000,
-            'contact' => '+6281234567890',
-            'address' => 'Palangan Krajan',
-        ]);
+        // Product::create([
+        //     'name' => 'Keripik singkong bapak Hasan',
+        //     'seller' => 'Bapak Hasan',
+        //     'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
+        //     'price' => 5000,
+        //     'contact' => '+6281234567890',
+        //     'address' => 'Palangan Krajan',
+        // ]);
 
-        Product::create([
-            'name' => 'Marning ibu Nami',
-            'seller' => 'Ibu Nami',
-            'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
-            'price' => 10000,
-            'contact' => '+6281234567890',
-            'address' => 'Palangan Krajan',
-        ]);
+        // Product::create([
+        //     'name' => 'Marning ibu Nami',
+        //     'seller' => 'Ibu Nami',
+        //     'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
+        //     'price' => 10000,
+        //     'contact' => '+6281234567890',
+        //     'address' => 'Palangan Krajan',
+        // ]);
 
-        Product::create([
-            'name' => 'Kue Basah Mama Ega',
-            'seller' => 'Mama Ega',
-            'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
-            'price' => 5000,
-            'contact' => '+6281234567890',
-            'address' => 'Palangan Timur',
-        ]);
+        // Product::create([
+        //     'name' => 'Kue Basah Mama Ega',
+        //     'seller' => 'Mama Ega',
+        //     'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
+        //     'price' => 5000,
+        //     'contact' => '+6281234567890',
+        //     'address' => 'Palangan Timur',
+        // ]);
 
-        Product::create([
-            'name' => 'Nafifah Cake',
-            'seller' => 'Ibu Zakiah',
-            'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
-            'price' => 10000,
-            'contact' => '+6281234567890',
-            'address' => 'Palangan Timur',
-        ]);
+        // Product::create([
+        //     'name' => 'Nafifah Cake',
+        //     'seller' => 'Ibu Zakiah',
+        //     'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
+        //     'price' => 10000,
+        //     'contact' => '+6281234567890',
+        //     'address' => 'Palangan Timur',
+        // ]);
     }
 }
