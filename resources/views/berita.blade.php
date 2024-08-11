@@ -32,17 +32,21 @@
     </section>
 
     <section id="berita">
-        @foreach ($beritas as $berita)
-            <div class="berita">
-                <img class="berita-img" src="{{ $berita->getFirstMediaUrl('hero') == '' ? '/img/berita/default.jpg' : $berita->getFirstMediaUrl('hero') }}">
-                <div class="berita-detail">
-                    <div class="berita-detail-container">
-                        <h1>{{$berita->title}}</h1>
-                        <p>{!!Str::limit(strip_tags($berita->body),10)!!}</p>
+        @if ($beritas->count() <= 0)
+            <h1>Tidak ada berita.</h1>
+        @else
+            @foreach ($beritas as $berita)
+                <div class="berita">
+                    <img class="berita-img" src="{{ $berita->getFirstMediaUrl('hero') == '' ? '/img/berita/default.jpg' : $berita->getFirstMediaUrl('hero') }}">
+                    <div class="berita-detail">
+                        <div class="berita-detail-container">
+                            <h1>{{$berita->title}}</h1>
+                            <p>{!!Str::limit(strip_tags($berita->body),10)!!}</p>
+                        </div>
+                        <a href="/berita/{{$berita->id}}" class="berita-btn">Lihat selengkapnya</a>
                     </div>
-                    <a href="/berita/{{$berita->id}}" class="berita-btn">Lihat selengkapnya</a>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        @endif
     </section>
 @endsection
