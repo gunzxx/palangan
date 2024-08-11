@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('seller');
+            $table->string('address');
             $table->longText('detail');
             $table->string('contact');
             $table->integer('price');

@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
             'price' => 5000,
             'contact' => '+6281234567890',
+            'address' => 'Palangan Krajan',
         ]);
 
         Product::create([
@@ -35,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
             'price' => 10000,
             'contact' => '+6281234567890',
+            'address' => 'Palangan Krajan',
         ]);
 
         Product::create([
@@ -43,6 +45,7 @@ class DatabaseSeeder extends Seeder
             'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
             'price' => 5000,
             'contact' => '+6281234567890',
+            'address' => 'Palangan Timur',
         ]);
 
         Product::create([
@@ -51,6 +54,7 @@ class DatabaseSeeder extends Seeder
             'detail' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt hic reiciendis error quae molestiae rem suscipit, provident cumque natus veritatis!',
             'price' => 10000,
             'contact' => '+6281234567890',
+            'address' => 'Palangan Timur',
         ]);
     }
 }

@@ -7,73 +7,84 @@ use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $products = Product::all();
-        return view('product.index',[
+        return view('product.index', [
             'page' => 'admin',
             'products' => $products,
         ]);
     }
 
-    public function create(){
+    public function create()
+    {
         return view('product.create');
     }
 
-    public function edit($id){
-        if(!$product= Product::find($id)){
-            return redirect('admin/product');
-        }
-        // dd($product);
-        return view('product.edit',[
-            'page' => 'admin',
-            'product' => $product,
-        ]);
-    }
-    
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'seller' => 'required',
             'price' => 'required',
             'detail' => 'required',
             'contact' => 'required',
+            'address' => 'required',
         ]);
-        
+
+        if ($request->gambar) {
+            $request->validate([
+                'gambar' => 'image',
+            ]);
+        }
+
         $product = Product::create([
             'name' => $request->name,
             'seller' => $request->seller,
             'price' => $request->price,
             'detail' => $request->detail,
-            'contact' => '+62'.substr($request->detail, 1),
+            'contact' => '+62' . substr($request->detail, 1),
+            'address' => $request->address,
         ]);
 
-        if($request->gambar){
-            $request->validate([
-                'gambar' => 'image',
-            ]);
+        if ($request->gambar) {
             $product->addMediaFromRequest('gambar')->toMediaCollection('preview');
         }
-        
+
         return redirect('admin')->with([
             'success' => 'Data berhasil ditambahkan',
         ]);
     }
 
-    public function update($id, Request $request){
+    public function edit($id)
+    {
+        if (!$product = Product::find($id)) {
+            return redirect('admin/product');
+        }
+        // dd($product);
+        return view('product.edit', [
+            'page' => 'admin',
+            'product' => $product,
+        ]);
+    }
+
+    public function update($id, Request $request)
+    {
         $request->validate([
             'name' => 'required',
             'seller' => 'required',
             'price' => 'required',
             'detail' => 'required',
             'contact' => 'required',
+            'address' => 'required',
         ]);
-        if(!$product= Product::find($id)){
+        if (!$product = Product::find($id)) {
             return redirect('admin')->withErrors([
                 'error' => 'Data tidak ditemukan'
             ]);
         }
 
-        if($request->gambar){
+        if ($request->gambar) {
             $request->validate([
                 'gambar' => 'image',
             ]);
@@ -85,22 +96,24 @@ class AdminProductController extends Controller
             'seller' => $request->seller,
             'price' => $request->price,
             'detail' => $request->detail,
-            'contact' => '+62'.substr($request->contact, 1),
+            'contact' => '+62' . substr($request->contact, 1),
+            'address' => $request->address,
         ]);
-        
+
         return redirect('admin/product')->with([
             'success' => 'Data berhasil diperbarui',
         ]);
     }
 
-    public function delete($id){
-        if(!$product= Product::find($id)){
+    public function delete($id)
+    {
+        if (!$product = Product::find($id)) {
             return response()->json([
                 'message' => 'data tidak ditemukan',
             ], 404);
         }
-        
-        // $product->delete();
+
+        $product->delete();
         return response()->json([
             'message' => 'data berhasil dihapus',
         ]);

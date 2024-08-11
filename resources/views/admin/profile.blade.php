@@ -1,8 +1,8 @@
 @extends('layout.main')
 
 @section('head')
-    <link rel="stylesheet" href="/style/admin.css">
-    <link rel="stylesheet" href="/style/admin-form.css">
+    <link rel="stylesheet" href="/style/admin/admin.css">
+    <link rel="stylesheet" href="/style/admin/admin-form.css">
 @endsection
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('head')
-    <link rel="stylesheet" href="/style/admin.css">
+    <link rel="stylesheet" href="/style/admin/admin.css">
 @endsection
 
 @section('content')
@@ -32,8 +32,9 @@
                     <th>Nama</th>
                     <th>Pemilik</th>
                     <th class="detail-col">Detail</th>
-                    <th>Nomor Telepon</th>
                     <th>Harga</th>
+                    <th>Nomor Telepon</th>
+                    <th>Alamat</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -54,8 +55,9 @@
                                 {{ $product->detail }}
                             </div>
                         </td>
-                        <td>{{ $product->contact }}</td>
                         <td>Rp. {{ number_format($product->price, 2, ',', '.') }}</td>
+                        <td>{{ $product->contact }}</td>
+                        <td>{{ $product->address }}</td>
                         <td>
                             <div class="action-container">
                                 <a href="/admin/product/{{ $product->id }}/edit" class="edit-btn">
@@ -92,6 +94,7 @@
                                 Authorization: `Bearer ${token}`,
                             },
                         }).then(res => {
+                            window.location.reload();
                             if (res.status == 200) {
                                 console.log(res.data.message);
                                 Swal.fire({

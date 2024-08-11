@@ -1,0 +1,8 @@
+#berita-detail {
+    width: 100%;
+    padding: 30px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

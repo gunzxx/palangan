@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::middleware(['auth:api'])->group(function(){
-    // Route::delete('/admin/{id}/delete', [AdminController::class, 'delete']);
+    Route::delete('/admin/{id}/delete', [AdminProductController::class, 'delete']);
 });

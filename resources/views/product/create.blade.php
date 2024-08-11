@@ -1,13 +1,13 @@
 @extends('layout.main')
 
 @section('head')
-    <link rel="stylesheet" href="/style/admin-form.css">
+    <link rel="stylesheet" href="/style/admin/admin-form.css">
 @endsection
 
 @section('content')
     <form class="form-container" method="POST" enctype="multipart/form-data">
         @csrf
-        <h1>Edit Data UMKM</h1>
+        <h1>Tambah Data UMKM</h1>
         <div class="form-group">
             <label for="name">Nama</label>
             <input autofocus value="{{old('name')}}" placeholder="Masukkan nama produk" type="text" id="name" name="name">
@@ -36,14 +36,30 @@
         <div class="form-group">
             <label for="price">Harga</label>
             <input value="{{old('price')}}" placeholder="Masukkan harga produk" type="number" id="price" name="price">
+            @error('price')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <label for="detail">Detail</label>
             <textarea placeholder="Masukkan detail produk" name="detail" id="detail">{{old('detail')}}</textarea>
+            @error('detail')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <label for="contact">Nomor telepon</label>
             <input value="{{old('contact')}}" placeholder="Masukkan nomor telepon (diawali dengan 0)" type="number" id="contact" name="contact">
+            @error('contact')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="address">Alamat</label>
+            <input value="{{old('address')}}" placeholder="Masukkan alamat" type="text" id="address" name="address">
+            @error('address')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <button>Simpan</button>

@@ -21,6 +21,12 @@
         <img src="/img/umkm/1.jpeg" alt="">
     </section>
 
+    <map name="planetmap">
+        <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+        <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+        <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+      </map>
+
     <section id="main">
         <h1>Tentang Palangan</h1>
         <div class="content-container">
@@ -69,6 +75,28 @@
                         style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+                <div id="product" data-aos="fade-up">
+                    <h1>Produk Desa Palangan</h1>
+                    <div class="products">
+                        @foreach ($products as $product)
+                            <div class="product">
+                                <div class="product-image">
+                                    <img src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
+                                </div>
+                                <div class="product-detail">
+                                    <div class="detail-container">
+                                        <h1>{{ $product->name }}</h1>
+                                        <p>{{ $product->detail }}</p>
+                                    </div>
+                                    <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
+                                        <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Pesan sekarang</p>
+                                    </a>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    <a href="/katalog">Lihat lainnya>></a>
+                </div>
             </div>
             <div class="content-side-container">
                 <div class="content-side">
@@ -93,30 +121,6 @@
                 </div> --}}
             </div>
         </div>
-    </section>
-
-
-    <section id="product">
-        <h1>Produk Desa Palangan</h1>
-        <div class="products">
-            @foreach ($products as $product)
-                <div class="product" data-aos="fade-up">
-                    <div class="product-image">
-                        <img src="{{ $product->getFirstMediaUrl() == '' ? '/img/product/default.jpg' : $product->getFirstMediaUrl() }}">
-                    </div>
-                    <div class="product-detail">
-                        <div class="detail-container">
-                            <h1>{{ $product->name }}</h1>
-                            <p>{{ $product->detail }}</p>
-                        </div>
-                        <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
-                            <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Pesan sekarang</p>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <a href="/katalog">Lihat lainnya>></a>
     </section>
 
     {{-- <section id="resources">

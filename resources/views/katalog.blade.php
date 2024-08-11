@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+    <section id="hero-image">
+        <img src="/img/hero/katalog.jpg">
+    </section>
+
     <section id="katalog">
         <h1>Daftar UMKM Desa Palangan</h1>
         <div class="katalogs">

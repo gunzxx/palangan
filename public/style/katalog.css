@@ -1,3 +1,14 @@
+#hero-image{
+    width: 100%;
+}
+
+#hero-image img{
+    width: 100%;
+    height: calc(100vh - 80px);
+    object-fit: cover;
+}
+
+
 #katalog{
     width: 100%;
     padding: 30px 150px;

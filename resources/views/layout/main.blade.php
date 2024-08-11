@@ -35,7 +35,8 @@
     <link href="/fa/css/brands.css" rel="stylesheet" />
     <link href="/fa/css/solid.css" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
-    <title>Desa Palangan | Market Place</title>
+    <title>KUMPALA | Desa Palangan</title>
+    <script src="/ckeditor/ckeditor.js"></script>
     @yield('head')
 </head>
 
@@ -73,19 +74,20 @@
 
     <section id="footer">
         <div class="footer-detail">
-            <div class="info-container">
-                <div class="info-img">
-                    <img src="/logo.png" alt="">
-                </div>
-                <div class="info-detail">
-                    <h1>Desa Palangan</h1>
-                    <p>Kecamatan Jangkar</p>
-                    <p>Kabupaten Situbondo</p>
-                    <p>Provinsi Kalimantan Timur</p>
-                </div>
-            </div>
             <div class="contact-container">
                 <div class="contact-row">
+                    <div class="info-container contact-col">
+                        <div class="info-img">
+                            <img src="/logo.png" alt="">
+                        </div>
+                        <div class="info-detail">
+                            <h1>KUMPALA</h1>
+                            <p>Desa Palangan</p>
+                            <p>Kecamatan Jangkar</p>
+                            <p>Kabupaten Situbondo</p>
+                            <p>Provinsi Kalimantan Timur</p>
+                        </div>
+                    </div>
                     <div class="contact-col">
                         <div class="contact-list">
                             <i class="fa-brands fa-whatsapp"></i>
@@ -93,11 +95,7 @@
                         </div>
                         <div class="contact-list">
                             <i class="fa-solid fa-envelope"></i>
-                            <p>admin@palangan.id</p>
-                        </div>
-                        <div class="contact-list">
-                            <i class="fa-solid fa-fax"></i>
-                            <p>+123456789</p>
+                            <p>kumpala240724@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-col">

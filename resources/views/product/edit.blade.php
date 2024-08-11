@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('head')
-    <link rel="stylesheet" href="/style/admin-form.css">
+    <link rel="stylesheet" href="/style/admin/admin-form.css">
 @endsection
 
 @section('content')
@@ -36,14 +36,30 @@
         <div class="form-group">
             <label for="price">Harga</label>
             <input type="number" id="price" name="price" value="{{ $product->price }}">
+            @error('price')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <label for="detail">Detail</label>
             <textarea name="detail" id="detail">{{ $product->detail }}</textarea>
+            @error('detail')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <label for="contact">Nomor telepon</label>
             <input value="{{str_replace('+62', 0, $product->contact)}}" placeholder="Masukkan nomor telepon (diawali dengan 0)" type="text" id="contact" name="contact">
+            @error('contact')
+                <span class="error">{{ $message }}</span>
+            @enderror
+        </div>
+        <div class="form-group">
+            <label for="address">Alamat</label>
+            <input value="{{old('address', $product->address)}}" placeholder="Masukkan alamat" type="text" id="address" name="address">
+            @error('address')
+                <span class="error">{{ $message }}</span>
+            @enderror
         </div>
         <div class="form-group">
             <button>Simpan</button>
