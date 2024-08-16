@@ -37,15 +37,16 @@
     <link rel="stylesheet" href="/style.css" />
     <title>KUMPALA | Desa Palangan</title>
     <script src="/ckeditor/ckeditor.js"></script>
+
+    {{-- Responsive  CSS--}}
+    <link rel="stylesheet" href="/mobile/style.css" />
     @yield('head')
 </head>
 
 <body>
     <nav>
         <div class="nav-header">
-            <div class="nav-logo">
-                <img src="/logo.png">
-            </div>
+            <img class="nav-logo" src="/logo.png">
             <div class="nav-header-text">
                 <h1>KUMPALA</h1>
                 <p>Komunitas UMKM Desa Palangan</p>
