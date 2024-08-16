@@ -17,7 +17,7 @@
     <section id="admin-menu">
         <div class="profile-menu-container">
             <div class="profile-img">
-                <img src="{{auth()->user()->getFirstMediaUrl('profile') == '' ? '/img/product/default.jpg' : auth()->user()->getFirstMediaUrl('profile')}}" alt="">
+                <img src="{{auth()->user()->getFirstMediaUrl('profile') == '' ? '/img/profile/default.jpg' : auth()->user()->getFirstMediaUrl('profile')}}" alt="">
             </div>
             <div class="profile-detail">
                 <p class="profile-welcome">Selamat datang,</p>
