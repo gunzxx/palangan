@@ -2,7 +2,9 @@
 
 @section('head')
     <link rel="stylesheet" href="/style/katalog.css">
+    <link rel="stylesheet" href="/mobile/admin.css">
 @endsection
+
 
 @section('content')
     <section id="hero-image">
@@ -23,7 +25,7 @@
                             <div class="katalog-text">
                                 <h3>{{$product->name}}</h3>
                                 <p>{{$product->seller}}</p>
-                                <p class="elipsis-text">{{$product->detail}}</p>
+                                <p class="elipsis-text">{{Str::limit($product->detail, 50)}}</p>
                             </div>
                             <a href="https://wa.me/{{$product->contact}}" target="_blank" class="katalog-price">
                                 <span><i class="fa-solid fa-cart-shopping"></i> &nbsp; Pesan sekarang</span>

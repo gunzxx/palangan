@@ -41,7 +41,7 @@
                     <img class="berita-img" src="{{ $berita->getFirstMediaUrl('hero') == '' ? '/img/berita/default.jpg' : $berita->getFirstMediaUrl('hero') }}">
                     <div class="berita-detail">
                         <div class="berita-detail-container">
-                            <h1>{{$berita->title}}</h1>
+                            <h1>{{Str::limit($berita->title, 50)}}</h1>
                             <p>{!!Str::limit(strip_tags($berita->body),100)!!}</p>
                         </div>
                         <a href="/berita/{{$berita->id}}" class="berita-btn">Lihat selengkapnya</a>
