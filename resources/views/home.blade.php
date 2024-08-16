@@ -33,7 +33,8 @@
             <div class="content-body">
                 <div class="content" id="apa-itu-palangan">
                     <h1 data-aos="fade-up">Apa itu Desa Palangan?</h1>
-                    <p data-aos="fade-up">Desa palangan terletak di kecamatan jangkar kab.situbondo, rata - rata penduduk desa bekerja sebagai petani. desa palangan memiliki kebudayaan bernama rokat saba, ritual rokat saba menjadi suatu mekanisme yang menciptakan keteraturan dan keharmonisan sosial.</p>
+                    <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ea, praesentium modi quas consequuntur temporibus dolore quisquam ut excepturi? Ut ipsum quis enim temporibus ipsam placeat mollitia, est et sapiente, explicabo quidem qui consectetur velit dolores a? Fuga, quae ipsam.</p>
+                    {{-- <p data-aos="fade-up">Desa palangan terletak di kecamatan jangkar kab.situbondo, rata - rata penduduk desa bekerja sebagai petani. desa palangan memiliki kebudayaan bernama rokat saba, ritual rokat saba menjadi suatu mekanisme yang menciptakan keteraturan dan keharmonisan sosial.</p> --}}
                     <div data-aos="fade-up" class="content-img">
                         <img src="/img/umkm/4.jpeg">
                     </div>

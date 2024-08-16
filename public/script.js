@@ -31,8 +31,10 @@ navLogo.addEventListener('click', function(){
     if(statusNav == 'open'){
         statusNav = 'close';
         navBody.style.height = 'max-content';
+        document.querySelector('nav').style.gap = '10px';
     } else if(statusNav == 'close'){
         statusNav = 'open';
         navBody.style.height = 0;
+        document.querySelector('nav').style.gap = 0;
     }
 });
