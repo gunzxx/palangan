@@ -7,11 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
     <link rel="stylesheet" href="/style/login.css">
+    <link rel="stylesheet" href="/mobile/login.css">
     <title>Desa Palangan | Login KUMPALA</title>
 </head>
 
 <body>
     <form method="POST" class="login-container">
+        <h1>Harap Login Terlebih Dahulu</h1>
         @error('error')
             <div class="alert-error">
                 <p>{{ $message }}</p>

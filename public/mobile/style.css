@@ -1,4 +1,8 @@
 @media (max-width: 768px){
+    section{
+        padding: 30px 10px !important;
+    }
+
     nav{
         padding: 10px;
         flex-direction: column;
@@ -57,5 +61,32 @@
 
     .contact-row *:not(h1){
         font-size: 10px !important;
+    }
+
+    #main{
+        padding: 30px 10px;
+    }
+
+    #maps iframe{
+        height: 200px;
+    }
+
+    .content-side{
+        padding: 0;
+    }
+
+    .content-side li{
+        width: 100%;
+    }
+
+    .content-side a{
+        width: 100%;
+        font-size: 10px !important;
+        white-space: wrap;
+        padding: 0;
+    }
+
+    .content-body{
+        gap: 10px;
     }
 }

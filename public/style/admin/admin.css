@@ -108,7 +108,8 @@ th.detail-col {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 30px 150px 150px 150px;
+    padding: 30px 150px;
+    padding-bottom: 150px;
 }
 #admin-menu h1 {
     color: var(--c1);

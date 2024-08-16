@@ -3,6 +3,7 @@
 @section('head')
     <link rel="stylesheet" href="/style/admin/admin.css">
     <link rel="stylesheet" href="/style/berita.css">
+    <link rel="stylesheet" href="/mobile/admin.css">
 @endsection
 
 @section('content')

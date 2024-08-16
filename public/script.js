@@ -23,3 +23,16 @@ function getCookie(name) {
     }
     return null;
 }
+
+const navLogo = document.querySelector('.nav-logo');
+const navBody = document.querySelector('.nav-body');
+let statusNav = 'open';
+navLogo.addEventListener('click', function(){
+    if(statusNav == 'open'){
+        statusNav = 'close';
+        navBody.style.height = 'max-content';
+    } else if(statusNav == 'close'){
+        statusNav = 'open';
+        navBody.style.height = 0;
+    }
+});
