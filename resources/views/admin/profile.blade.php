@@ -13,7 +13,7 @@
             <h1>Profil</h1>
             <div class="form-group">
                 <div class="img-preview">
-                    <img src="{{auth()->user()->getFirstMediaUrl('profile') == '' ? '/img/profile/default.jpg' : auth()->user()->getFirstMediaUrl('profile')}}">
+                    <img src="{{auth()->user()->getFirstMediaUrl('profile') == '' ? '/img/profile/default.png' : auth()->user()->getFirstMediaUrl('profile')}}">
                 </div>
                 <input type="file" accept="image/*" name="profileImg" id="profileImg">
             </div>

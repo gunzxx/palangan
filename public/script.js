@@ -4,7 +4,7 @@ document.addEventListener("scroll", function () {
 
     if (scrollPosition > 40) {
         navbar.style.position = "fixed";
-        navbar.style.backgroundColor = "rgba(255, 255, 255, .7)";
+        navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
     } else {
         navbar.style.position = "static";
         navbar.style.backgroundColor = "rgba(255, 255, 255, 1)";
