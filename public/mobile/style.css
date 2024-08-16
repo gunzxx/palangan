@@ -89,4 +89,37 @@
     .content-body{
         gap: 10px;
     }
+
+    /**
+    * Katalog
+    */
+    .product{
+        flex-direction: column;
+    }
+
+    .product-image{
+        width: 100%;
+    }
+
+    .product-image img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .product-detail {
+        width: 100%;
+    }
+
+    /**
+    * Berita
+    */
+    .berita-img{
+        width: 100px !important;
+        overflow: hidden;
+    }
+    
+    .berita-detail{
+        width: calc(100% - 100px);
+    }
 }

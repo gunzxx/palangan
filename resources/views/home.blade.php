@@ -87,7 +87,7 @@
                                     <div class="product-detail">
                                         <div class="detail-container">
                                             <h1>{{ $product->name }}</h1>
-                                            <p>{{ $product->detail }}</p>
+                                            <p>{{ Str::limit($product->detail, 100) }}</p>
                                         </div>
     x                                    <a href="https://wa.me/{{$product->contact}}" target="_blank" class="price-container">
                                             <p><i class="fa-solid fa-cart-shopping"></i> &nbsp;Pesan sekarang</p>

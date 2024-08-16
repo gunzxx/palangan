@@ -42,7 +42,7 @@
                     <div class="berita-detail">
                         <div class="berita-detail-container">
                             <h1>{{$berita->title}}</h1>
-                            <p>{!!Str::limit(strip_tags($berita->body),10)!!}</p>
+                            <p>{!!Str::limit(strip_tags($berita->body),100)!!}</p>
                         </div>
                         <a href="/berita/{{$berita->id}}" class="berita-btn">Lihat selengkapnya</a>
                     </div>
